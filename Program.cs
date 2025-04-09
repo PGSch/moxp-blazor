@@ -17,11 +17,12 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-
+app.UseStaticFiles();
 app.UseAntiforgery();
 
-app.MapStaticAssets();
+// Configure the app to work with GitHub Pages base path
+app.UsePathBase("/moxp-blazor");
+
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
