@@ -1,0 +1,124 @@
+﻿@inherits LayoutComponentBase
+@using Microsoft.JSInterop
+@inject IJSRuntime JSRuntime
+
+<!-- Particles Background -->
+<div id="particles-js"></div>
+
+<!-- Header -->
+<header>
+    <a href="#" class="logo">
+        <i class="fas fa-cube"></i>
+        <span>MOXP</span> Protocol
+    </a>
+    
+    <nav id="nav">
+        <ul>
+            <li><a href="#features" @onclick="CloseMenu">Features</a></li>
+            <li><a href="#tokenomics" @onclick="CloseMenu">Tokenomics</a></li>
+            <li><a href="#roadmap" @onclick="CloseMenu">Roadmap</a></li>
+            <li><a href="#team" @onclick="CloseMenu">Team</a></li>
+            <li><a href="#" @onclick="CloseMenu">Whitepaper</a></li>
+        </ul>
+        
+        <div class="header-btns">
+            <button class="btn btn-primary">Launch DApp</button>
+            <button class="btn btn-outline">Connect Wallet</button>
+        </div>
+    </nav>
+    
+    <button class="mobile-menu-btn" @onclick="ToggleMenu">
+        <i class="@(isMenuOpen ? "fas fa-times" : "fas fa-bars")"></i>
+    </button>
+</header>
+
+<main>
+    @Body
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <a href="#" class="logo">
+                <i class="fas fa-cube"></i>
+                <span>MOXP</span> Protocol
+            </a>
+            <p>Building the infrastructure for decentralized finance 2.0.</p>
+            
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+                <a href="#"><i class="fab fa-medium"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-col">
+            <h4>Protocol</h4>
+            <ul>
+                <li><a href="#">Vaults</a></li>
+                <li><a href="#">Staking</a></li>
+                <li><a href="#">Governance</a></li>
+                <li><a href="#">Analytics</a></li>
+                <li><a href="#">Docs</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>Community</h4>
+            <ul>
+                <li><a href="#">Forum</a></li>
+                <li><a href="#">Grants</a></li>
+                <li><a href="#">Bug Bounty</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Cookie Policy</a></li>
+                <li><a href="#">Risk Disclosure</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>Subscribe</h4>
+            <p>Stay updated with our latest news and announcements.</p>
+            
+            <div class="footer-newsletter">
+                <input type="email" placeholder="Your Email">
+                <button class="btn btn-primary">Subscribe</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <div>© @DateTime.Now.Year MOXP Protocol. All rights reserved.</div>
+        <div>$MOXP: AoYoV7hNkuVNcE9pZX447mELpAjqyo6bk9KaoXtEpump</div>
+    </div>
+</footer>
+
+@code {
+    private bool isMenuOpen = false;
+
+    private async Task ToggleMenu()
+    {
+        isMenuOpen = !isMenuOpen;
+        await JSRuntime.InvokeVoidAsync("toggleMenu", isMenuOpen);
+    }
+
+    private async Task CloseMenu()
+    {
+        if (isMenuOpen)
+        {
+            isMenuOpen = false;
+            await JSRuntime.InvokeVoidAsync("toggleMenu", false);
+        }
+    }
+}

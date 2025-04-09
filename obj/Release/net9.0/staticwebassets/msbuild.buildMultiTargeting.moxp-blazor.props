@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\moxp-blazor.props" />
+</Project>

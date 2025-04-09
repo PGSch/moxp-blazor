@@ -1,0 +1,214 @@
+﻿@page "/"
+@inject IJSRuntime JSRuntime
+
+<!-- Hero Section -->
+<section class="hero" @ref="heroSection">
+    <div class="hero-content">
+        <h1>Decentralized Finance Reimagined</h1>
+        <p>MOXP Protocol <em><b>is a parody placeholder project</b></em> and combines the power of DeFi 2.0 with cutting-edge blockchain technology to deliver unprecedented yield opportunities with institutional-grade security.</p>
+        
+        <div class="hero-btns">
+            <button class="btn btn-primary pulse">Buy $MOXP</button>
+            <button class="btn btn-outline">Learn More</button>
+        </div>
+        
+        <div class="hero-stats">
+            <div class="stat-item">
+                <div class="stat-value">$42.7M</div>
+                <div class="stat-label">TVL</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">12.9K</div>
+                <div class="stat-label">Holders</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">6.3%</div>
+                <div class="stat-label">APY</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="hero-token">
+        <div class="token-3d"></div>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="features" id="features">
+    <div class="section-header">
+        <h2>Why MOXP Protocol?</h2>
+        <p>Our platform offers a comprehensive suite of DeFi products designed to maximize returns while minimizing risk.</p>
+    </div>
+    
+    <div class="feature-grid">
+        @foreach (var feature in features)
+        {
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="@feature.Icon"></i>
+                </div>
+                <h3>@feature.Title</h3>
+                <p>@feature.Description</p>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- Tokenomics -->
+<section class="tokenomics" id="tokenomics">
+    <div class="section-header">
+        <h2>Tokenomics</h2>
+        <p>The $MOXP token powers our ecosystem with carefully designed incentives for long-term growth.</p>
+    </div>
+    
+    <div class="tokenomics-container">
+        <div class="tokenomics-chart">
+            <img src="images/supernovablackhole_red.png" alt="Tokenomics Chart" style="width: 100%; height: auto; border-radius: 50%;">
+        </div>
+        
+        <div class="tokenomics-info">
+            <h2>$MOXP Distribution</h2>
+            <p>The total supply of 100 million $MOXP tokens is allocated strategically to ensure sustainable growth and community participation.</p>
+            
+            <div class="token-details">
+                @foreach (var detail in tokenDetails)
+                {
+                    <div class="token-detail">
+                        <h4>@detail.Label</h4>
+                        <p>@detail.Value</p>
+                    </div>
+                }
+            </div>
+            
+            <p>Holders benefit from staking rewards, governance rights, and a share of protocol revenues distributed weekly.</p>
+            
+            <button class="btn btn-primary">View Full Tokenomics</button>
+        </div>
+    </div>
+</section>
+
+<!-- Roadmap -->
+<section class="roadmap" id="roadmap">
+    <div class="section-header">
+        <h2>Roadmap</h2>
+        <p>Our strategic development plan to build the future of decentralized finance.</p>
+    </div>
+    
+    <div class="timeline">
+        @foreach (var item in roadmapItems)
+        {
+            <div class="timeline-item">
+                <div class="timeline-date">@item.Date</div>
+                <div class="timeline-content">
+                    <h3>@item.Title</h3>
+                    <p>@item.Description</p>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- Team -->
+<section class="team" id="team">
+    <div class="section-header">
+        <h2>Our Team</h2>
+        <p>Industry veterans with decades of combined experience in blockchain, finance, and technology.</p>
+    </div>
+    
+    <div class="team-grid">
+        @foreach (var member in teamMembers)
+        {
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="@member.ImageUrl" alt="@member.Name">
+                </div>
+                <div class="member-info">
+                    <h3>@member.Name</h3>
+                    <p>@member.Position</p>
+                    <div class="member-social">
+                        @if (!string.IsNullOrEmpty(member.TwitterUrl))
+                        {
+                            <a href="@member.TwitterUrl"><i class="fab fa-twitter"></i></a>
+                        }
+                        @if (!string.IsNullOrEmpty(member.GithubUrl))
+                        {
+                            <a href="@member.GithubUrl"><i class="fab fa-github"></i></a>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <h2>Ready to Join the Future of Finance?</h2>
+    <p>Start earning passive income with MOXP Protocol today. Simple, secure, and always in your control.</p>
+    
+    <div class="hero-btns">
+        <button class="btn btn-primary pulse">Get Started</button>
+        <button class="btn btn-outline">Read Docs</button>
+    </div>
+</section>
+
+@code {
+    private ElementReference heroSection;
+    
+    private List<FeatureCard> features = new()
+    {
+        new("Institutional Security", "fas fa-shield-alt", "Multi-signature vaults, insurance coverage, and regular smart contract audits to protect your assets."),
+        new("Cross-Chain", "fas fa-coins", "Access liquidity across Ethereum, BSC, Polygon, Avalanche, and Solana with our bridge aggregator."),
+        new("No Lockups", "fas fa-lock-open", "Withdraw your funds at any time without penalties or withdrawal fees."),
+        new("Low Fees", "fas fa-percentage", "Our efficient architecture keeps fees minimal, maximizing your returns.")
+    };
+
+    private List<TokenDetail> tokenDetails = new()
+    {
+        new("Total Supply", "100,000,000"),
+        new("Market Cap", "$24.8M"),
+        new("Circulating", "45,200,000"),
+        new("Current Price", "$0.55")
+    };
+
+    private List<RoadmapItem> roadmapItems = new()
+    {
+        new("Q2 2025", "Protocol Launch", "Initial deployment on Ethereum mainnet with core yield aggregation and staking features."),
+        new("Q3 2025", "Cross-Chain Expansion", "Deployment on Binance Smart Chain and Polygon to expand accessibility and reduce fees."),
+        new("Q4 2025", "DAO Governance", "Full decentralization with protocol control transferred to $MOXP token holders."),
+        new("Q1 2024", "Institutional Products", "Launch of enterprise-grade vaults with enhanced security and compliance features."),
+        new("Future", "Beyond", "Continuous innovation with new yield sources, risk management tools, and blockchain integrations.")
+    };
+
+    private List<TeamMember> teamMembers = new()
+    {
+        new(
+            "pgschdev",
+            "Founder & CTO",
+            "https://avatars.githubusercontent.com/u/42341174?v=4",
+            "https://x.com/pgschdev",
+            "https://github.com/PGSch"
+        ),
+        new(
+            "MOXP",
+            "Founder & CEO",
+            "images/supernovablackhole_red.png",
+            "https://x.com/moxp123",
+            null
+        )
+    };
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("initializeParticles");
+            await JSRuntime.InvokeVoidAsync("initializeAnimations", heroSection);
+        }
+    }
+
+    private record FeatureCard(string Title, string Icon, string Description);
+    private record TokenDetail(string Label, string Value);
+    private record RoadmapItem(string Date, string Title, string Description);
+    private record TeamMember(string Name, string Position, string ImageUrl, string TwitterUrl, string? GithubUrl);
+}
