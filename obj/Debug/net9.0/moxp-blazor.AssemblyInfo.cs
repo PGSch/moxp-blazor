@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("moxp-blazor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae4f2ad09700e21c880c230523f0d906950b303c")]
 [assembly: System.Reflection.AssemblyProductAttribute("moxp-blazor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("moxp-blazor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
