@@ -33,7 +33,7 @@ jobs:
         uses: actions/configure-pages@v3
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v1
         with:
           path: bin/Release/net9.0/publish/wwwroot
 

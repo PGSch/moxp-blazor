@@ -127,3 +127,4 @@ C:\Users\Admin\GitHub\moxp-blazor\obj\Debug\net9.0\compressed\d8nl1clo6p-63fj8s7
 C:\Users\Admin\GitHub\moxp-blazor\obj\Debug\net9.0\compressed\9uekncirhl-0j3bgjxly4.gz
 C:\Users\Admin\GitHub\moxp-blazor\obj\Debug\net9.0\compressed\i7b448hbb7-56npkya5fz.gz
 C:\Users\Admin\GitHub\moxp-blazor\obj\Debug\net9.0\compressed\7zzuj37cej-56npkya5fz.gz
+C:\Users\Admin\GitHub\moxp-blazor\obj\Debug\net9.0\moxp-blazor.sourcelink.json
