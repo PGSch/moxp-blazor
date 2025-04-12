@@ -1,6 +1,7 @@
 # Build results
 [Bb]in/
 [Oo]bj/
+obj/*
 
 # Visual Studio files
 .vs/

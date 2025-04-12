@@ -1,7 +1,0 @@
-C:\Users\Admin\GitHub\moxp-blazor\bin\Release\net9.0\publish\moxp-blazor.exe
-C:\Users\Admin\GitHub\moxp-blazor\bin\Release\net9.0\publish\appsettings.Development.json
-C:\Users\Admin\GitHub\moxp-blazor\bin\Release\net9.0\publish\appsettings.json
-C:\Users\Admin\GitHub\moxp-blazor\bin\Release\net9.0\publish\moxp-blazor.dll
-C:\Users\Admin\GitHub\moxp-blazor\bin\Release\net9.0\publish\moxp-blazor.deps.json
-C:\Users\Admin\GitHub\moxp-blazor\bin\Release\net9.0\publish\moxp-blazor.runtimeconfig.json
-C:\Users\Admin\GitHub\moxp-blazor\bin\Release\net9.0\publish\moxp-blazor.pdb
