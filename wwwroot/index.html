@@ -29,7 +29,15 @@
         Loading...
     </div>
 
-    <script src="_framework/blazor.web.js"></script>
+    <script src="_framework/blazor.web.js" autostart="false"></script>
+    <script>
+        // This helps ensure the framework loads correctly with the base path
+        window.Blazor.start({
+            loadBootResource: function (type, name, defaultUri, integrity) {
+                return `${document.baseURI}_framework/${name}`;
+            }
+        });
+    </script>
     <script src="js/site.js"></script>
 </body>
 </html>
