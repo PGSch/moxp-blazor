@@ -29,8 +29,18 @@ jobs:
       - name: Publish
         run: dotnet publish -c Release
 
+      # Debug steps to verify output
+      - name: List publish output
+        run: |
+          echo "Contents of publish directory:"
+          ls -la bin/Release/net9.0/publish/wwwroot/
+          echo "Checking for _framework directory:"
+          ls -la bin/Release/net9.0/publish/wwwroot/_framework/ || echo "_framework directory not found"
+
       - name: Add .nojekyll file
-        run: touch bin/Release/net9.0/publish/wwwroot/.nojekyll
+        run: |
+          touch bin/Release/net9.0/publish/wwwroot/.nojekyll
+          echo "Created .nojekyll file"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

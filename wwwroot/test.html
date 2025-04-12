@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>MOXP Test Page</title>
+</head>
+<body>
+    <h1>MOXP Test Page</h1>
+    <p>If you can see this page, basic file serving is working on GitHub Pages.</p>
+    
+    <div>
+        <h2>Debug Information</h2>
+        <p id="baseUrl"></p>
+        <p id="currentPath"></p>
+    </div>
+    
+    <script>
+        document.getElementById('baseUrl').textContent = 'Base URL: ' + window.location.origin;
+        document.getElementById('currentPath').textContent = 'Current Path: ' + window.location.pathname;
+    </script>
+</body>
+</html>
