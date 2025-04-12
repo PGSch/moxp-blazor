@@ -29,6 +29,9 @@ jobs:
       - name: Publish
         run: dotnet publish -c Release
 
+      - name: Add .nojekyll file
+        run: touch bin/Release/net9.0/publish/wwwroot/.nojekyll
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
