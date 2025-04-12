@@ -1,4 +1,4 @@
-using moxp_blazor.Components;
+using MoxpBlazor.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,12 +16,12 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+// Configure the app to work with GitHub Pages base path - this must come before other middleware
+app.UsePathBase("/moxp-blazor");
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAntiforgery();
-
-// Configure the app to work with GitHub Pages base path
-app.UsePathBase("/moxp-blazor");
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();

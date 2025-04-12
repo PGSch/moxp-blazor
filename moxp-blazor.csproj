@@ -4,7 +4,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>moxp-blazor</RootNamespace>
+    <RootNamespace>MoxpBlazor</RootNamespace>
     <AssemblyName>$(AssemblyName.Replace(' ', '_'))</AssemblyName>
     <StaticWebAssetBasePath>/moxp-blazor/</StaticWebAssetBasePath>
     <PublishGitHubPages>true</PublishGitHubPages>
